@@ -286,7 +286,7 @@ public class NativeNfcManager implements DeviceHost {
                  * such a frame is supported. Extended length frames however
                  * are not supported.
                  */
-                return 261; // Will be automatically split in two frames on the RF layer
+                return 2462; // Will be automatically split in two frames on the RF layer
             case (TagTechnology.NFC_F):
                 return 252; // PN544 RF buffer = 255 bytes, subtract one for SoD, two for CRC
             default:
@@ -310,7 +310,7 @@ public class NativeNfcManager implements DeviceHost {
     @Override
     public boolean getExtendedLengthApdusSupported() {
         // TODO check BCM support
-        return false;
+        return true;
     }
 
     @Override
